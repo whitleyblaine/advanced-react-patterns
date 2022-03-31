@@ -5,9 +5,7 @@ import * as React from 'react'
 import {Switch} from '../switch'
 
 function callAll(...fns) {
-  return (...args) => {
-    fns.forEach(fn => fn && fn(...args))
-  }
+  return (...args) => fns.forEach(fn => fn?.(...args))
 }
 
 function useToggle() {
